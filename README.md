@@ -66,4 +66,10 @@ Different network sizes, learning rates, and weight decays were experimented wit
 # Feature Selection
 Given the poor performance of the initial neural network training, it is likely that many of the features that I engineered are redundant and not worthwhile including.
 
-To investigate this I used a jupyter notebook and random forests.
+To investigate this I explored the random forest approach in xgboost, as xgboost as a plot_importance feature which measure the importance of the feature in building the trees to reduce training loss.
+
+
+![Initial training](Initial_feature_importance.png)
+
+
+
