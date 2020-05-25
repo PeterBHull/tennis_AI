@@ -27,8 +27,8 @@ underdog_recent_notupset: For the last 10 matches <br />
 
 overdog_gotupset: Total number of times the overdog has been upset as an overdog in career <br />
 overdog_notupset: Total nubmer of times the overdog has not been upset as an overdog in career <br />
-overdog_recent_gotupset: Total number of times the overdog has got upset in past ten matches <br />
-overdog_recent_notupset: Total nubmer of times the overdog has not gotten upset in past ten matches <br />
+overdog_recent_gotupset: For the last 10 matches <br />
+overdog_recent_notupset: For the last 10 matches <br />
 
 ## Previous Head2Head
 
