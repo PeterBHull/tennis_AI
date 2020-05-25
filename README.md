@@ -59,9 +59,11 @@ Training was done using cross validation in Pytorch. Experiments were tracked us
 
 ![Initial training](Initial_training.png)
 
-We can see that the validation loss ranges between 65% to 70%. This is using a 50x4 square network. 
+We can see that the validation loss between different folds ranges between 65% to 70%. This is using a 50x4 square network. 
 The activation function used was ReLU with exception to the last layer, which was sigmoid. <br /> This is custom practice for binary classification in a neural network
-Different network sizes, learning rates, and weight decays were experimented with to optimize hyperparameters.
+Different network sizes, learning rates, and weight decays were experimented with in an attempt to optimize hyperparameters.
 
 # Feature Selection
-Given the poor performance of the initial neural network training, it is likely that many of the features that I engineered are redundant and not worthwhile. 
+Given the poor performance of the initial neural network training, it is likely that many of the features that I engineered are redundant and not worthwhile including.
+
+To investigate this I used a jupyter notebook and random forests.
