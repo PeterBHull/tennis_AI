@@ -68,7 +68,7 @@ Different network sizes, learning rates, and weight decays were experimented wit
 If we were to predict the overdog everytime, we would get accuracy of 65%, so as of right now on average we are only getting a 2-3% increase in prediction accuracy. This suggests that we should revisit our feature engineering/selection
 
 # Feature Selection (XGBoost)
-[Jupyter Notebook for Feature Exploration](ATP_machine_learning/feature_selection/feature_selection.py)
+[Jupyter Notebook for Feature Exploration](ATP_machine_learning/feature_selection/feature_selection.ipynb)
 
 Given the poor performance of the initial neural network training, it is likely that many of the features that I engineered are redundant and not worthwhile including.
 
