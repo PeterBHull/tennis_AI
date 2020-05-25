@@ -35,4 +35,6 @@ train.py
 Split the data up so that the test set was just data from 2019-2020. This will be the best way to judge the models ability to predict future outcomes given previous trianing data.
 Training was done using cross validation in Pytorch. Experiments were tracked using wandb.
 
+![alt text](https://github.com/PeterBHull/tennis_AI/blob/master/initial_training.jpg?raw=true)
+
 
