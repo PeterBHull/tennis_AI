@@ -1,7 +1,7 @@
 # tennis_AI
 
 # Introduction
-In the past my friends and I have always bet on the outcome of tennis matches, and had competitions to see who could fill out the most correct bracket before tournaments. I want to see how different machine learning methods, particularly random forests and neural networks could be used to predict this.
+In the past my friends and I have always bet on the outcome of tennis matches, and had competitions to see who could fill out the best bracket before tournaments. I want to see how different machine learning methods, particularly random forests and neural networks could be used to help me assert dominance over my friends, and potentially outperform the betting odds.
 
 # Data
 The data used is from https://github.com/JeffSackmann/tennis_atp.
