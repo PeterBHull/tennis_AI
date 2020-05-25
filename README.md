@@ -10,13 +10,13 @@ It has data stretching from the 1960's to present day on ATP matches, and accomp
 # Feature Engineering
 
 From what I have seen online, when people use machine learning to predict sports matches they will frequently state results such as a validation accuracy of 65%. But in my mind this is not very good if just predicting the favourite everytime will also give you accuracy of 65%.
-I set up my network so that there would be one group of features for the "overdog" (favourite), and another group of features for the "underdog". Then the Y variable would be 0 if the overdog won, and 1 if the underdog won. This way I would be able to easily how much better my neural network was performing compared to just predicting the overdog everytime. This was done through underdog_overdog.py.
+I set up my network so that there would be one group of features for the "overdog" (favourite), and another group of features for the "underdog". Then the Y variable would be 0 if the overdog won (no upsert), and 1 if the underdog won (upset). This way I would be able to easily see how much better my neural network was performing compared to just predicting the overdog everytime. This was done through underdog_overdog.py.
 
 I then engineering the following features
 
 ## Upset Potential
 
-Given that we are trying to predict the possibility of an upset here, it makes sense to engineer features to capture this probability. One is the number of times that the overdog has been upset recently, and another is the number of times that the underdog performed and upset recently.
+Given that we are trying to predict the possibility of an upset here, it makes sense to engineer features to capture this probability. 
 
 underdog_upset:Total number of times underdog has upset an overdog in career <br />
 underdog_notupset :Total nubmer of times underdog has failed to upset an overdog in career <br />
@@ -41,10 +41,10 @@ underdog_h2h_recent_wins: number of wins in last ten encounters for underdog <br
 This will give a better picture of how hot the player is. Four features in total: underdog_recent_loss, overdog_recent_loss,underdog_recent_win,overdog_recent_win
 Also added in four surface specific recent win/loss metrics. 
 
-total_wins_overdog <br />
-total_losses_overdog <br />
-recent_wins_overdog <br />
-recent_losses_overdog <br />
+total_wins_overdog: overdog total career wins <br />
+total_losses_overdog: overdog total career losses <br />
+recent_wins_overdog: overdog wins in last ten games <br />
+recent_losses_overdog:overdog losses in last ten games <br />
 
 ## Previous Stats
 
