@@ -14,21 +14,43 @@ I set up my network so that there would be one group of features for the "overdo
 
 I then engineering the following features
 
-## Times Upset Recently
+## Upset Potential
 
 Given that we are trying to predict the possibility of an upset here, it makes sense to engineer features to capture this probability. One is the number of times that the overdog has been upset recently, and another is the number of times that the underdog performed and upset recently.
+
+underdog_upset:Total number of times underdog has upset an overdog in career <br />
+underdog_notupset :Total nubmer of times underdog has failed to upset an overdog in career <br />
+underdog_recent_upset: For the last 10 matches <br />
+underdog_recent_notupset: For the last 10 matches <br />
+
+overdog_gotupset: Total number of times the overdog has been upset as an overdog in career <br />
+overdog_notupset: Total nubmer of times the overdog has not been upset as an overdog in career <br />
+overdog_recent_gotupset: Total number of times the overdog has got upset in past ten matches <br />
+overdog_recent_notupset: Total nubmer of times the overdog has not gotten upset in past ten matches <br />
 
 ## Previous Head2Head
 
 The previous head2head of players is crucial. An underdog may have a particularly good record against an overdog
 
-## Previous Stats
-
-Also include the average of the recorded stats for the past ten matches (e.g. first serve percentage, break points faced, etc.)
+overdog_h2h_wins: number of career wins over underdog for overdog <br />
+underdog_h2h_wins: number of career wins over underdog for overdog <br />
+overdog_h2h_recent_wins: number of wins in last ten encounters for overdog <br />
+underdog_h2h_recent_wins: number of wins in last ten encounters for underdog <br />
 
 ## Recent Win/Loss
 This will give a better picture of how hot the player is. Four features in total: underdog_recent_loss, overdog_recent_loss,underdog_recent_win,overdog_recent_win
 Also added in four surface specific recent win/loss metrics. 
+
+total_wins_overdog <br />
+total_losses_overdog <br />
+recent_wins_overdog <br />
+recent_losses_overdog <br />
+
+## Previous Stats
+
+Also include the average of the recorded stats for the past ten matches (e.g. first serve percentage, break points faced, etc.)
+
+
 
 # Initial Neural Network Training
 train.py
@@ -37,4 +59,9 @@ Training was done using cross validation in Pytorch. Experiments were tracked us
 
 ![Initial training](Initial_training.png)
 
-We can see that the validation loss ranges between 65% to 70%. This is using a 50x4 square network.
+We can see that the validation loss ranges between 65% to 70%. This is using a 50x4 square network. 
+The activation function used was ReLU with exception to the last layer, which was sigmoid. <br /> This is custom practice for binary classification in a neural network
+Different network sizes, learning rates, and weight decays were experimented with to optimize hyperparameters.
+
+# Feature Selection
+Given the poor performance of the initial neural network training, it is likely that many of the features that I engineered are redundant and not worthwhile. 
