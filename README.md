@@ -77,5 +77,5 @@ To investigate this I explored the random forest approach in xgboost, as xgboost
 
 ![Initial training](Initial_feature_importance.png)
 
-
+Nice to see that overdog_rank and underdog_rank are the most important features. <br /> It is clear that overdog_hand and underdog_hand do not make much of a difference. Intuitively this makes sense. <br />All of the MVA stats seems to be quite important. <br /> It is promising that the previous upset/not upset statistics seem to be pretty important. <br />It is puzzling that the h2h features do not seem to be very important. For feature reduction purposes it likely makes sense to remodel the features as difference between overdog and underdog, versus having one feature for each.
 
