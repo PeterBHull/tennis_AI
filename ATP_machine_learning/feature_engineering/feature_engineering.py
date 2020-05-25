@@ -45,7 +45,7 @@ if __name__ == "__main__":
     print('ninth',stats_overdog)
     print('tenth',stats_underdog)
 
-
+    #Reset from multiindex to normal index so that can rejoin
     if overdog_gets_upsets.index.nlevels > 1: 
         overdog_gets_upsets.reset_index(level=0, drop=True, inplace=True)
     if underdog_upsets.index.nlevels > 1:
@@ -69,12 +69,8 @@ if __name__ == "__main__":
 
     dfs = [head2head_total,surface_head2head,overdog_gets_upsets,underdog_upsets, win_loss_overdog, win_loss_overdog_surface,win_loss_underdog, win_loss_underdog_surface,stats_overdog,stats_underdog]
     count = 0
-    for i in dfs:
-        print(count)
-        print(i)
-        count += 1
 
-    
+    #Join data back together
     data = data.join(dfs)
     data.astype({'winner_seed': str,'loser_seed': str,'overdog_seed':str,'underdog_seed':str}).to_parquet('datav2.parquet')
 

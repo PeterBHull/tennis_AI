@@ -113,13 +113,17 @@ X_train = preprocessing.scale(X_train.values)
 X_test = preprocessing.scale(X_test.values)
 
 
-X_train = pd.DataFrame(X_train, columns = column_list)
+X_train = pd.DataFrame(X_train, columns = column_list, index = Y_train.index)
 
-X_test = pd.DataFrame(X_test, columns = column_list)
+X_test = pd.DataFrame(X_test, columns = column_list, index = Y_test.index)
 
 
 print(len(X_train))
 print(len(X_test))
+
+
+print(X_train)
+print(Y_train)
 
 
 #SAVE TO PARQUETS

@@ -20,18 +20,10 @@ def one_hot(start,end):
                'loser_hand','loser_ht','loser_ioc','loser_age',
                'w_ace','w_df','w_svpt','w_1stIn','w_1stWon',
                 'w_2ndWon','w_SvGms','w_bpSaved','w_bpFaced',
-            'l_ace','l_df',
-    'l_svpt',
-    'l_1stIn',
-    'l_1stWon',
-    'l_2ndWon',
-    'l_SvGms',
-    'l_bpSaved',
-    'l_bpFaced',
-    'winner_rank',
-    'winner_rank_points',
-    'loser_rank',
-    'loser_rank_points']
+            'l_ace','l_df','l_svpt','l_1stIn','l_1stWon',
+            'l_2ndWon','l_SvGms','l_bpSaved','l_bpFaced',
+            'winner_rank','winner_rank_points','loser_rank',
+            'loser_rank_points']
 
     
     #renaming features based on overdog vs underdog
@@ -58,6 +50,8 @@ def one_hot(start,end):
 
     df['Winner'] = np.nan
     bad_count = 0
+    #loop through rows and create new "overdog" and "underdog" columns appropriately
+    #Quite fast when using multiprocessing
     for k in ind:
         row = df.loc[k]
         if math.isnan(row['winner_rank']) or math.isnan(row['loser_rank']):
@@ -124,6 +118,7 @@ if __name__ == "__main__":
 
     data = data.reset_index(drop=True)
 
+    #Using multiprocessing
     NUM_CORES = 14
     results = []
     pool = mp.Pool(processes=NUM_CORES)
